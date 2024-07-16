@@ -73,8 +73,8 @@ def benchmark_ocr(image_path, ground_truth_path, ocr_function, output_path):
 def run_benchmarks(images, ground_truths):
     ocr_functions = {
         'Tesseract': run_tesseract,
-        'OCRmyPDF': lambda img, out: run_ocrmypdf(img, out, dpi=300)
-        
+        'OCRmyPDF': lambda img, out: run_ocrmypdf(img, out, dpi=300),
+       
     }
 
     results = {tool: [] for tool in ocr_functions}
@@ -106,17 +106,15 @@ def visualize_results(results):
     plt.tight_layout()
     plt.show()
 
-
-
-
 # Example usage
 images = [
-    'C:/Users/yahya/Desktop/stag2/image.png'
+    r'C:\Users\yahya\Desktop\ocrscan\image.png'
 ]
 
 ground_truths = [
-    'C:/Users/yahya/Desktop/stag2/text_image.txt'
+    r'C:\Users\yahya\Desktop\ocrscan\text_image.txt'
 ]
 
 results = run_benchmarks(images, ground_truths)
 visualize_results(results)
+
